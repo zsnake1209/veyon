@@ -25,6 +25,7 @@
 #pragma once
 
 #include "PlatformInputDeviceFunctions.h"
+#include "LinuxKeyboardInput.h"
 
 // clazy:excludeall=copyable-polymorphic
 
@@ -38,6 +39,8 @@ public:
 
 	KeyboardShortcutTrapper* createKeyboardShortcutTrapper( QObject* parent ) override;
 
+	void injectKeyEvent( KeySym keySym, bool down ) override;
+
 private:
 	void setEmptyKeyMapTable();
 	void restoreKeyMapTable();
@@ -48,5 +51,7 @@ private:
 	int m_keyCodeMax{0};
 	int m_keyCodeCount{0};
 	int m_keySymsPerKeyCode{0};
+
+	LinuxKeyboardInput m_keyboardInput;
 
 };

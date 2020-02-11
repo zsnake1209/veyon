@@ -41,6 +41,8 @@ public:
 
 	KeyboardShortcutTrapper* createKeyboardShortcutTrapper( QObject* parent ) override;
 
+	void injectKeyEvent( KeySym keySym, bool down ) override;
+
 	static void checkInterceptionInstallation();
 
 	static void stopOnScreenKeyboard();

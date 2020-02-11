@@ -60,6 +60,20 @@ KeyboardShortcutTrapper* LinuxInputDeviceFunctions::createKeyboardShortcutTrappe
 
 
 
+void LinuxInputDeviceFunctions::injectKeyEvent( LinuxInputDeviceFunctions::KeySym keySym, bool down )
+{
+	if( down )
+	{
+		m_keyboardInput.pressKey( keySym );
+	}
+	else
+	{
+		m_keyboardInput.releaseKey( keySym );
+	}
+}
+
+
+
 void LinuxInputDeviceFunctions::setEmptyKeyMapTable()
 {
 	if( m_origKeyTable )
