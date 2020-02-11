@@ -1,4 +1,5 @@
 if(VEYON_BUILD_WIN32)
+add_subdirectory(swimvnc)
 add_subdirectory(ultravnc-builtin)
 endif()
 
